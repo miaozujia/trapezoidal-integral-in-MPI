@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(homework)
+find_package(MPI REQUIRED)
+include_directories("${MPI_CXX_INCLUDE_DIRS}")
+# include_directories(/usr/src/linux-headers-4.15.0-48/include/)
+# add_executable(main src/homework.c src/get_input.c src/trap.c)
+add_executable(main src/homework.c src/trap.c)
+target_link_libraries(main ${MPI_LIBRARIES})
